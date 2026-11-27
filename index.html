@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gota a Gota – Projeto Final</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio">Gota a Gota</a>
+    <nav aria-label="Principal">
+      <a href="#calculadora">Calculadora</a><a href="#metodo">Método</a><a href="#equipe">Equipe</a><a href="#referencias">Referências</a><a href="#contato">Contato</a>
+      <button class="theme" id="tema" type="button" aria-label="Alternar tema claro e escuro">Tema</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="wrap hero" id="inicio">
+  <h1>Quanta água você gasta por <mark>dia</mark>?</h1>
+  <p class="lead">Projeto final da disciplina de Desenvolvimento Web. Uma calculadora de consumo doméstico que mostra onde a água vai e compara com a meta de 110 litros por pessoa.</p>
+  <div class="meta"><b>Disciplina:</b> Desenvolvimento Web<br><b>Professor(a):</b> Nome do(a) professor(a)<br><b>Semestre:</b> 2026.2</div>
+</div>
+
+<div class="wrap">
+<section id="calculadora">
+  <h2>Calculadora de consumo</h2>
+  <p class="sub">Mexa nos controles. O resultado atualiza na hora.</p>
+  <div class="sheet calc">
+    <div>
+      <div class="field"><label for="pessoas">Pessoas na casa <output id="o-pessoas"></output></label><input id="pessoas" type="range" min="1" max="8" value="3"></div>
+      <div class="field"><label for="banho">Banho (minutos por pessoa) <output id="o-banho"></output></label><input id="banho" type="range" min="1" max="30" value="10"></div>
+      <div class="field"><label for="descarga">Descargas por pessoa/dia <output id="o-descarga"></output></label><input id="descarga" type="range" min="1" max="12" value="5"></div>
+      <div class="field"><label for="torneira">Torneira aberta (min por pessoa/dia) <output id="o-torneira"></output></label><input id="torneira" type="range" min="0" max="30" value="6"></div>
+      <div class="field"><label for="lavagem">Lavagens de roupa por semana <output id="o-lavagem"></output></label><input id="lavagem" type="range" min="0" max="14" value="3"></div>
+    </div>
+    <div aria-live="polite">
+      <div class="big"><span id="r-dia">0</span> <small>L por pessoa/dia</small></div>
+      <div class="bar" id="barra" role="img" aria-label="Divisão do consumo por atividade"></div>
+      <div class="goal"><i id="meta-linha"></i><em id="meta-txt">meta 110 L</em></div>
+      <ul class="legend" id="legenda"></ul>
+      <p style="margin:14px 0 0"><b id="r-mes">0</b> m³ por mês na casa toda</p>
+      <p class="tip" id="dica"></p>
+    </div>
+  </div>
+</section>
+
+<section id="metodo">
+  <h2>Como o projeto foi feito</h2>
+  <p class="sub">Etapas seguidas pela equipe, na ordem.</p>
+  <ol class="steps">
+    <li><div><h3>Levantamento</h3><p>Pesquisa dos valores médios de vazão de chuveiro, torneira, vaso sanitário e máquina de lavar.</p></div></li>
+    <li><div><h3>Protótipo no papel</h3><p>Desenho das telas e definição dos campos que o usuário preenche.</p></div></li>
+    <li><div><h3>Implementação</h3><p>HTML para a estrutura, CSS para o visual e JavaScript para o cálculo em tempo real.</p></div></li>
+    <li><div><h3>Testes</h3><p>Validação dos resultados com contas feitas à mão e teste em celular e computador.</p></div></li>
+  </ol>
+  <div class="sheet" style="margin-top:22px">
+    <h3 style="margin-bottom:10px">Valores usados nos cálculos</h3>
+    <div class="scroll"><table>
+      <thead><tr><th>Atividade</th><th>Valor médio</th></tr></thead>
+      <tbody>
+        <tr><td>Chuveiro</td><td>12 L por minuto</td></tr>
+        <tr><td>Descarga (caixa acoplada)</td><td>6 L por acionamento</td></tr>
+        <tr><td>Torneira aberta</td><td>8 L por minuto</td></tr>
+        <tr><td>Máquina de lavar</td><td>90 L por ciclo</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section id="equipe">
+  <h2>Equipe</h2>
+  <p class="sub">Troque pelos nomes reais do grupo.</p>
+  <div class="team">
+    <div class="sheet"><h3>Integrante 1</h3><p>Lógica em JavaScript</p></div>
+    <div class="sheet"><h3>Integrante 2</h3><p>Estilo e layout em CSS</p></div>
+    <div class="sheet"><h3>Integrante 3</h3><p>Estrutura em HTML e textos</p></div>
+    <div class="sheet"><h3>Integrante 4</h3><p>Testes e documentação</p></div>
+  </div>
+</section>
+
+<section id="referencias">
+  <h2>Referências</h2>
+  <p class="sub">Confira e complete com as fontes que o grupo realmente usou, no formato ABNT.</p>
+  <ul>
+    <li>Órgão de saneamento da sua cidade: dados de consumo médio por habitante.</li>
+    <li>Organização das Nações Unidas: recomendações de consumo diário de água.</li>
+    <li>MDN Web Docs: documentação de HTML, CSS e JavaScript.</li>
+  </ul>
+</section>
+
+<section id="contato">
+  <h2>Fale com a equipe</h2>
+  <p class="sub">Envie uma sugestão. Neste protótipo a mensagem não é enviada a nenhum servidor.</p>
+  <form class="sheet" id="form" novalidate>
+    <div><label for="nome">Nome</label><input id="nome" type="text" autocomplete="name"><p class="err" id="e-nome"></p></div>
+    <div><label for="email">E-mail</label><input id="email" type="email" autocomplete="email"><p class="err" id="e-email"></p></div>
+    <div><label for="msg">Mensagem</label><textarea id="msg" rows="4"></textarea><p class="err" id="e-msg"></p></div>
+    <div><button class="btn" type="submit">Enviar mensagem</button></div>
+    <div id="ok" role="status">Mensagem registrada. Obrigado pela sugestão!</div>
+  </form>
+</section>
+</div>
+</main>
+
+<footer><div class="wrap">Gota a Gota · Projeto final de Desenvolvimento Web · 2026.2</div></footer>
+
+<script src="script.js"></script>
+</body>
+</html>
